@@ -80,6 +80,6 @@ cd datathons-2
 bash conda-install.bash
 
 # 3. ative o ambiente
-conda activate datathons
+conda activate datathons-2
 ```
 
