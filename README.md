@@ -9,7 +9,7 @@
 
 ## :scroll: Descrição do projeto
 
-Módulo de obtenção e processamento de dados hidrometeorológicos.
+[descrição do projeto aqui]
 
 ## :sparkles: Funcionalidades
 
@@ -20,7 +20,7 @@ Módulo de obtenção e processamento de dados hidrometeorológicos.
 ## :warning: Pré-requisitos
 
 - [Python](https://www.python.org/) (obrigatório)
-- [Poetry](https://python-poetry.org/) (para desenvolvimento)
+- [Conda](https://docs.conda.io/en/latest/) (para desenvolvimento)
 
 
 ## :arrow_forward: Execução
@@ -77,9 +77,9 @@ Mais exemplos de uso disponíveis nos notebooks `dadosANA.ipynb` e `dadosINMET.i
 cd datathons-2
 
 # 2. crie o ambiente virtual do projeto
-poetry install
+bash conda-install.bash
 
-# 3. ative o ambiente (opcional)
-source .venv/bin/activate
+# 3. ative o ambiente
+conda activate datathons
 ```
 
