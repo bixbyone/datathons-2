@@ -1,24 +1,28 @@
 """Utilitários gerais."""
-from pathlib import Path
 import json
+
+from pathlib import Path
+from typing import Any
+from typing import Dict
+
 import pandas as pd
 
-def obter_coordenadas(arquivo: Path) -> pd.DataFrame:
+
+def carregar_json(arquivo: Path) -> Dict[Any, Any]:
     """
-    Obtém os postos de medição que passaram nos testes.
+    Carrega um arquivo json.
 
     Parameters
     ----------
     arquivo : Path
-        Diretório para o arquivo json.
+        Caminho para o arquivo json.
 
     Returns
     -------
-    pd.DataFrame
-        DataFrame com as coordenadas dos pontos de medição que passaram nos testes. 
+    Dict[Any, Any]
+        Arquivo json
     """
     with open(arquivo) as f:
         json_data = json.load(f)
 
-    postos_ok = json_data['postos_ok']
-    return pd.DataFrame.from_dict(postos_ok).round(2)
+    return json_data

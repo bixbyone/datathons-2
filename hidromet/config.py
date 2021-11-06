@@ -17,3 +17,10 @@ dir_shapefile.mkdir(parents=True, exist_ok=True)
 dir_prec_ana.mkdir(parents=True, exist_ok=True)
 dir_prec_inmet.mkdir(parents=True, exist_ok=True)
 dir_prec_concat.mkdir(parents=True, exist_ok=True)
+
+# epsg UTM da bacia do iguaçu
+epsg = "31985"
+# epgs inicial
+epsg_inicial = "4326"
+# buffer em metros
+buffer = 30000
