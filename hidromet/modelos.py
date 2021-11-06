@@ -1,5 +1,6 @@
 """Estruturas de informação sobre as séries de cada posto/bacia."""
 from typing import List
+
 from pydantic import BaseModel
 
 

@@ -21,7 +21,10 @@ class ANA:
 
     @classmethod
     def inventario(
-        self, codigo: str = "", tipoest: Union[str, int] = "", telemetrica: Union[str, int] = 1
+        self,
+        codigo: str = "",
+        tipoest: Union[str, int] = "",
+        telemetrica: Union[str, int] = 1,
     ) -> pd.DataFrame:
         """
         Obtém o inventário de postos da ANA.
@@ -86,8 +89,12 @@ class ANA:
 
         return inventario
 
-    def obter_chuva(self, cod_estacao: int, data_inicial: str = "", data_final: str = "",
-    consistencia: int = 2
+    def obter_chuva(
+        self,
+        cod_estacao: int,
+        data_inicial: str = "",
+        data_final: str = "",
+        consistencia: int = 2,
     ) -> pd.DataFrame:
         """
         Obtém a série histórica de um posto pluviométrico.
