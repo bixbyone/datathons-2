@@ -72,7 +72,7 @@ def remover_outliers(serie: pd.Series, p: float) -> pd.Series:
 
 def substituir_negativos(serie: pd.Series) -> pd.Series:
     """
-    Substitui valores negativos da série por 0.
+    Substitui valores negativos da série por NaN.
 
     Parameters
     ----------
@@ -82,12 +82,11 @@ def substituir_negativos(serie: pd.Series) -> pd.Series:
     Returns
     -------
     pd.Series
-        Série com valores negativos substituídos por 0.    
+        Série com valores negativos substituídos por NaN.    
     """
-    
     serie_sem_na = serie.dropna()
     indices_negativos = serie_sem_na[serie_sem_na < 0].index
-    serie.loc[indices_negativos] = 0
+    serie.loc[indices_negativos] = np.nan
     return serie
 
 
