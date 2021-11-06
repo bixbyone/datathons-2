@@ -1,14 +1,24 @@
 """Utilitários gerais."""
 from pathlib import Path
+import json
+import pandas as pd
 
-
-def dir_projeto() -> Path:
+def obter_coordenadas(arquivo: Path) -> pd.DataFrame:
     """
-    Define a raíz do diretório do projeto.
+    Obtém os postos de medição que passaram nos testes.
+
+    Parameters
+    ----------
+    arquivo : Path
+        Diretório para o arquivo json.
 
     Returns
     -------
-    Path
-        Caminho para o projeto.
+    pd.DataFrame
+        DataFrame com as coordenadas dos pontos de medição que passaram nos testes. 
     """
-    return Path(__file__).parent.parent
+    with open(arquivo) as f:
+        json_data = json.load(f)
+
+    postos_ok = json_data['postos_ok']
+    return pd.DataFrame.from_dict(postos_ok).round(2)
