@@ -5,6 +5,25 @@ from datetime import date
 import pandas as pd
 
 
+def remover_codigos_duplicados(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Remove os códigos duplicados do dataset.
+    
+    Atualmente, a remoção mantém o primeiro código disponível.
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe de entrada indexado por código de posto.
+        
+    Returns
+    -------
+    pd.DataFrame
+        Dataframe com códigos de postos removidos.
+    """
+    return df[~df.index.duplicated(keep='first')]
+
+
 def remover_duplicados(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove índices de data duplicados.
