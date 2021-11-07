@@ -4,9 +4,10 @@ from typing import List
 from typing import Optional
 
 import geopandas as gpd
+from geopandas.geodataframe import GeoDataFrame
 import pandas as pd
 import shapely
-
+from shapely.geometry import mapping
 
 def obter_buffer(
     contorno: gpd.geodataframe.GeoDataFrame, distancia: float
@@ -200,3 +201,27 @@ def criar_geodataframe(
         Dataframe de coordenadas.
     """
     return gpd.GeoDataFrame(df, geometry=coordenadas)
+
+def coordenadas_shapefile(shp: GeoDataFrame) -> pd.DataFrame:
+    """
+    Obtém as coordenadas de um shapefile.
+
+    Parameters
+    -------
+    shp : gpd.geodataframe.GeoDataFrame
+        Shapefile.
+
+    Returns
+    -------
+    pd.DataFrame
+    """
+
+    g = [i for i in shp.geometry]
+
+    geojson_ob = mapping(g[0])
+    all_coords = geojson_ob["coordinates"][0]
+
+    bacia_lat = [i[1] for i in all_coords]
+    bacia_lon = [i[0] for i in all_coords]
+
+    return pd.DataFrame({"latitude": bacia_lat, "longitude": bacia_lon})
