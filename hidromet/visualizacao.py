@@ -1,8 +1,9 @@
 import plotly.express as px
 import plotly.graph_objects as go
-from shapely.geometry import mapping
+
 import pandas as pd
 import geopandas as gpd
+from hidromet import contornos
 
 
 def plot_postos(pontos:pd.DataFrame, shp:gpd.GeoDataFrame) -> go.Figure:
@@ -18,20 +19,12 @@ def plot_postos(pontos:pd.DataFrame, shp:gpd.GeoDataFrame) -> go.Figure:
 
     """
     postos = pontos.index
-    xs = pontos['x']
-    ys = pontos['y']
-    
+    xs = pontos['longitude']
+    ys = pontos['latitude']
 
-    from shapely.geometry import mapping
-
-    g = [i for i in shp.geometry]
-
-    geojson_ob = mapping(g[0])
-    all_coords = geojson_ob["coordinates"][0]
-
-    bacia_lat = [i[1] for i in all_coords]
-    bacia_lon = [i[0] for i in all_coords]
-
+    df = contornos.coordenadas_shapefile(shp)
+    bacia_lon = df['longitude']
+    bacia_lat = df['latitude']
 
     fig = go.Figure()
 
@@ -73,7 +66,7 @@ def plot_postos(pontos:pd.DataFrame, shp:gpd.GeoDataFrame) -> go.Figure:
         mapbox_zoom=5.5,
     )
 
-    return fig.show()
+    return fig
 
 
 def plot_series(series:pd.DataFrame) -> go.Figure:
@@ -108,7 +101,7 @@ def plot_series(series:pd.DataFrame) -> go.Figure:
 
 
    
-    return figline.show(config=dict(displayModeBar=False))
+    return figline
 
 
 def plot_bubble(series:pd.DataFrame) -> go.Figure:
@@ -123,17 +116,17 @@ def plot_bubble(series:pd.DataFrame) -> go.Figure:
     """
 
     posto = series.index
-    xs = series['x']
-    ys = series['y']
+    xs = series['longitude']
+    ys = series['latitude']
     falhas = series['falhas']
 
-    figbub= go.Figure()
+    figbub = go.Figure()
 
 
     figbub.add_trace(go.Scattergeo(
         lon=xs,
         lat=ys,
-        text=[posto, falhas],
+        text=posto,
         mode='markers',
         marker=dict(
             color='black',
@@ -154,4 +147,4 @@ def plot_bubble(series:pd.DataFrame) -> go.Figure:
         mapbox_zoom=5.5,
     )
 
-    return figbub.show()   
+    return figbub
