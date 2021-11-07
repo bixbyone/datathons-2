@@ -1,8 +1,9 @@
 import plotly.express as px
 import plotly.graph_objects as go
-from shapely.geometry import mapping
+
 import pandas as pd
 import geopandas as gpd
+from hidromet import contornos
 
 
 def plot_postos(pontos:pd.DataFrame, shp:gpd.GeoDataFrame) -> go.Figure:
@@ -20,18 +21,10 @@ def plot_postos(pontos:pd.DataFrame, shp:gpd.GeoDataFrame) -> go.Figure:
     postos = pontos.index
     xs = pontos['x']
     ys = pontos['y']
-    
 
-    from shapely.geometry import mapping
-
-    g = [i for i in shp.geometry]
-
-    geojson_ob = mapping(g[0])
-    all_coords = geojson_ob["coordinates"][0]
-
-    bacia_lat = [i[1] for i in all_coords]
-    bacia_lon = [i[0] for i in all_coords]
-
+    df = contornos.coordenadas_shapefile(shp)
+    bacia_lon = df['longitude']
+    bacia_lat = df['latitude']
 
     fig = go.Figure()
 
@@ -127,7 +120,7 @@ def plot_bubble(series:pd.DataFrame) -> go.Figure:
     ys = series['y']
     falhas = series['falhas']
 
-    figbub= go.Figure()
+    figbub = go.Figure()
 
 
     figbub.add_trace(go.Scattergeo(
