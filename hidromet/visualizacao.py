@@ -19,8 +19,8 @@ def plot_postos(pontos:pd.DataFrame, shp:gpd.GeoDataFrame) -> go.Figure:
 
     """
     postos = pontos.index
-    xs = pontos['x']
-    ys = pontos['y']
+    xs = pontos['longitude']
+    ys = pontos['latitude']
 
     df = contornos.coordenadas_shapefile(shp)
     bacia_lon = df['longitude']
@@ -116,8 +116,8 @@ def plot_bubble(series:pd.DataFrame) -> go.Figure:
     """
 
     posto = series.index
-    xs = series['x']
-    ys = series['y']
+    xs = series['longitude']
+    ys = series['latitude']
     falhas = series['falhas']
 
     figbub = go.Figure()
