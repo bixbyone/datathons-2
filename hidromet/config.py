@@ -13,7 +13,8 @@ dir_prec_inmet = dir_arquivos.joinpath("series-chuva-inmet")
 dir_prec_concat = dir_arquivos.joinpath("series-concatenadas")
 dir_merge = dir_arquivos.joinpath("merge")
 dir_merge_concat = dir_arquivos.joinpath("merge-concatenado")
-
+dir_merge_posto = dir_arquivos.joinpath("merge-e-posto")
+dir_final = dir_arquivos.joinpath("series-preenchidas")
 
 dir_arquivos.mkdir(parents=True, exist_ok=True)
 dir_shapefile.mkdir(parents=True, exist_ok=True)
@@ -22,6 +23,8 @@ dir_prec_inmet.mkdir(parents=True, exist_ok=True)
 dir_prec_concat.mkdir(parents=True, exist_ok=True)
 dir_merge.mkdir(parents=True, exist_ok=True)
 dir_merge_concat.mkdir(parents=True, exist_ok=True)
+dir_merge_posto.mkdir(parents=True, exist_ok=True)
+dir_final.mkdir(parents=True, exist_ok=True)
 
 # epsg UTM da bacia do iguaçu
 epsg = "31985"
