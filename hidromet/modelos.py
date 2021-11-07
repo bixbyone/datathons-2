@@ -1,7 +1,11 @@
 """Estruturas de informação sobre as séries de cada posto/bacia."""
 from typing import List
 
+import pandas as pd
+
+from hidromet import config
 from pydantic import BaseModel
+from shapely.geometry import Point
 
 
 class Posto(BaseModel):
@@ -30,3 +34,37 @@ class Bacia(BaseModel):
     n_postos: int
     # nome da bacia
     bacia: str
+
+
+class Satelite(BaseModel):
+    """Dados de satélite."""
+
+    # coordenadas do ponto de grade
+    coordenadas: Point
+    # serie de precipitação
+    serie: pd.Series
+
+    class Config:
+        """Configurações de tipo."""
+
+        arbitrary_types_allowed = True
+
+
+class IntersecaoSatelitePosto(BaseModel):
+    """Estrutura de interseção entre satélite e postos de chuva."""
+
+    # coordenadas do posto
+    coords_posto: Point
+    # nome do posto
+    codigo_posto: str
+    # extensão do buffer
+    extensao_buffer: float = config.buffer
+    # lista de pontos de grade de satélite dentro do buffer
+    pontos_grade: List[Point]
+    # série de precipitação média dos pontos de grade do satélite
+    serie_satelite: pd.Series
+
+    class Config:
+        """Configurações de tipo."""
+
+        arbitrary_types_allowed = True
