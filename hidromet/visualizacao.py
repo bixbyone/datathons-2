@@ -66,7 +66,7 @@ def plot_postos(pontos:pd.DataFrame, shp:gpd.GeoDataFrame) -> go.Figure:
         mapbox_zoom=5.5,
     )
 
-    return fig.show()
+    return fig
 
 
 def plot_series(series:pd.DataFrame) -> go.Figure:
@@ -101,7 +101,7 @@ def plot_series(series:pd.DataFrame) -> go.Figure:
 
 
    
-    return figline.show(config=dict(displayModeBar=False))
+    return figline
 
 
 def plot_bubble(series:pd.DataFrame) -> go.Figure:
@@ -126,7 +126,7 @@ def plot_bubble(series:pd.DataFrame) -> go.Figure:
     figbub.add_trace(go.Scattergeo(
         lon=xs,
         lat=ys,
-        text=[posto, falhas],
+        text=posto,
         mode='markers',
         marker=dict(
             color='black',
@@ -147,4 +147,4 @@ def plot_bubble(series:pd.DataFrame) -> go.Figure:
         mapbox_zoom=5.5,
     )
 
-    return figbub.show()   
+    return figbub
