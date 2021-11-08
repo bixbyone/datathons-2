@@ -31,4 +31,4 @@ epsg = "31985"
 # epgs inicial
 epsg_inicial = "4326"
 # buffer em metros
-buffer = 30000
+buffer = 15000
