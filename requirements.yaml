@@ -262,4 +262,3 @@ dependencies:
     - regex==2021.11.2
     - toml==0.10.2
     - tomli==1.2.2
-prefix: /mnt/coworking/landrade/miniconda3/envs/datathons-2
