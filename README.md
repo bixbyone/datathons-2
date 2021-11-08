@@ -53,7 +53,7 @@ cd datathons-2
 pip install -r requirements.txt
 ```
 
-### :computer: Ordem de execução dos notebooks
+### Ordem de execução dos notebooks
 
 > OBS: Todos os notebooks com o prefixo `dados` poderão ser rodados em qualquer ordem. Estes servem apenas para a coleta de dados de diversas fontes.
 
@@ -62,23 +62,50 @@ pip install -r requirements.txt
 
 #### Execução completa
 
+
+##### Coleta
 1. 00.dados-ANA.ipynb
 1. 00.dados-INMET.ipynb
 1. 00.dados-satelite.ipynb
 
+##### Remoção de postos repetidos entre e intra fontes
 2. 01.remocao-repetidos.ipynb
+
+##### Visualização exploratória
 3. 02.EDA-viz.ipynb
+
+##### Remoção de outliers
 4. 03.rem-out.ipynb
+
+##### Análise de representatividade
 5. 04.representatividade.ipynb
+
+##### Preenchimento de falhas
 6. 05.preenchimento.ipynb
+
+##### Execução final
 7. 06.execucao.ipynb
 
-**EXTRA** Preenchimento da cobertura de postos a partir de postos artificiais!
+##### Visualização com plotly
+```bash
+# em seu terminal, rode o executável
+python 07.dash.py
+```
+
+##### Extra: Preenchimento da cobertura de postos a partir de postos artificiais!
 6. 05.extra.preenchimento-bacias.ipynb
 
 #### Teste do resultado
 
+##### Execução final
 1. 06.execucao.ipynb
+
+##### Visualização com plotly
+```bash
+# em seu terminal, rode o executável
+python 07.dash.py
+```
+
 
 ## :construction: Desenvolvimento
 
