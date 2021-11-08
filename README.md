@@ -73,8 +73,7 @@ pip install -r requirements.txt
 6. 05.preenchimento.ipynb
 7. 06.execucao.ipynb
 
-**EXTRA** Preenchimento da cobertura de postos a partir de postos artificiais!
-6. 05.extra.preenchimento-bacias.ipynb
+> **EXTRA** Preenchimento da cobertura de postos a partir de postos artificiais: 05.extra.preenchimento-bacias.ipynb
 
 #### Teste do resultado
 
