@@ -27,7 +27,7 @@ Consolidação de dados de precipitação da bacia do Iguaçu.
 ## :warning: Pré-requisitos
 
 - [Python](https://www.python.org/) (obrigatório)
-- [Conda](https://docs.conda.io/en/latest/) (para desenvolvimento)
+- [Conda](https://docs.conda.io/en/latest/) (recomendado)
 
 
 ## :arrow_forward: Execução
@@ -50,7 +50,9 @@ cd datathons-2
 3. Instale as dependências.
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt # com pip
+# OU 
+bash conda-install.bash # com conda (recomendado)
 ```
 
 ### Ordem de execução dos notebooks
