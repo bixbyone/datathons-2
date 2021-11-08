@@ -13,6 +13,7 @@ dependencies:
   - bokeh=2.4.1=py39hf3d152e_1
   - boost-cpp=1.74.0=h359cf19_5
   - branca=0.4.2=pyhd8ed1ab_0
+  - brotli-python=1.0.9=py39he80948d_6
   - brotlipy=0.7.0=py39h3811e60_1003
   - bzip2=1.0.8=h7f98852_4
   - c-ares=1.18.1=h7f98852_0
@@ -34,8 +35,10 @@ dependencies:
   - curl=7.79.1=h2574ce0_1
   - cycler=0.11.0=pyhd8ed1ab_0
   - cytoolz=0.11.2=py39h3811e60_1
+  - dash=2.0.0=pyhd8ed1ab_0
   - dask=2021.11.0=pyhd8ed1ab_0
   - dask-core=2021.11.0=pyhd8ed1ab_0
+  - dataclasses=0.8=pyhc8e2a94_3
   - debugpy=1.5.1=py39he80948d_0
   - decorator=5.1.0=pyhd8ed1ab_0
   - distributed=2021.11.0=py39hf3d152e_1
@@ -44,6 +47,8 @@ dependencies:
   - entrypoints=0.3=pyhd8ed1ab_1003
   - expat=2.4.1=h9c3ff4c_0
   - fiona=1.8.20=py39h427c1bf_2
+  - flask=2.0.2=pyhd8ed1ab_0
+  - flask-compress=1.10.1=pyhd8ed1ab_0
   - folium=0.12.0=pyhd8ed1ab_1
   - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
   - font-ttf-inconsolata=3.000=h77eed37_0
@@ -73,6 +78,7 @@ dependencies:
   - ipykernel=6.4.2=py39hef51801_0
   - ipython=7.29.0=py39hef51801_1
   - ipython_genutils=0.2.0=py_1
+  - itsdangerous=2.0.1=pyhd8ed1ab_0
   - jasper=2.0.33=ha77e612_0
   - jbig=2.1=h7f98852_2003
   - jedi=0.18.0=py39hf3d152e_3
@@ -158,6 +164,7 @@ dependencies:
   - pillow=8.3.2=py39ha612740_0
   - pip=21.3.1=pyhd8ed1ab_0
   - pixman=0.40.0=h36c2ea0_0
+  - plotly=5.3.1=pyhd8ed1ab_0
   - poppler=21.09.0=ha39eefc_3
   - poppler-data=0.4.11=hd8ed1ab_0
   - postgresql=13.3=h2510834_3
@@ -199,6 +206,7 @@ dependencies:
   - sqlite=3.36.0=h9cd32fc_2
   - statsmodels=0.13.0=py39hce5d2b2_0
   - tblib=1.7.0=pyhd8ed1ab_0
+  - tenacity=8.0.1=pyhd8ed1ab_0
   - threadpoolctl=3.0.0=pyh8a188c0_0
   - tiledb=2.3.4=he87e0bf_0
   - tk=8.6.11=h27826a3_1
@@ -212,6 +220,7 @@ dependencies:
   - tzdata=2021e=he74cb21_0
   - urllib3=1.26.7=pyhd8ed1ab_0
   - wcwidth=0.2.5=pyh9f0ad1d_2
+  - werkzeug=2.0.1=pyhd8ed1ab_0
   - wheel=0.37.0=pyhd8ed1ab_1
   - xarray=0.20.0=pyhd8ed1ab_0
   - xerces-c=3.2.3=h8ce2273_4
@@ -253,3 +262,4 @@ dependencies:
     - regex==2021.11.2
     - toml==0.10.2
     - tomli==1.2.2
+prefix: /mnt/coworking/landrade/miniconda3/envs/datathons-2
