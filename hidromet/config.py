@@ -15,6 +15,7 @@ dir_merge = dir_arquivos.joinpath("merge")
 dir_merge_concat = dir_arquivos.joinpath("merge-concatenado")
 dir_merge_posto = dir_arquivos.joinpath("merge-e-posto")
 dir_final = dir_arquivos.joinpath("series-preenchidas")
+dir_final_extra = dir_arquivos.joinpath("series-preenchidas-extra")
 
 dir_arquivos.mkdir(parents=True, exist_ok=True)
 dir_shapefile.mkdir(parents=True, exist_ok=True)
@@ -25,10 +26,11 @@ dir_merge.mkdir(parents=True, exist_ok=True)
 dir_merge_concat.mkdir(parents=True, exist_ok=True)
 dir_merge_posto.mkdir(parents=True, exist_ok=True)
 dir_final.mkdir(parents=True, exist_ok=True)
+dir_final_extra.mkdir(parents=True, exist_ok=True)
 
 # epsg UTM da bacia do iguaçu
 epsg = "31985"
 # epgs inicial
 epsg_inicial = "4326"
 # buffer em metros
-buffer = 30000
+buffer = 15000

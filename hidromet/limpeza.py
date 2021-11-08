@@ -64,9 +64,9 @@ def percentil(serie: pd.Series, p: float) -> float:
     return serie.quantile(p)
 
 
-def remover_outliers(serie: pd.Series, p: float) -> pd.Series:
+def remover_outliers(serie: pd.Series, limite: float = 400) -> pd.Series:
     """
-    Remove os valores maiores que o percentil solicitado da série.
+    Remove os valores maiores que o limite máximo possível da série.
 
     OBS: Onde houver outliers, o valor será substituído por NaN na série.
 
@@ -75,16 +75,15 @@ def remover_outliers(serie: pd.Series, p: float) -> pd.Series:
     serie : pd.Series
         Série de dados.
 
-    p : float
-        Percentil da série, de 0 a 1.
+    limite : float
+        Limite máximo da série.
 
     Returns
     -------
     pd.Series
         Série sem outliers.
     """
-    valor_p = percentil(serie=serie, p=p)
-    indice_outliers = serie[serie > valor_p].index
+    indice_outliers = serie[serie > limite].index
     serie.loc[indice_outliers] = np.nan
 
     return serie
